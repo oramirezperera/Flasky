@@ -1,11 +1,13 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
+from flask_moment import Moment
 
 app = Flask(__name__)
-
+moment = Moment(app)
 
 @app.route('/')
 def index():
-    return f'<h1>Bad Request</h1>', 400
+    return '<h1>Hello World</h1>'
+
 
 
 @app.route('/user/<name>')
